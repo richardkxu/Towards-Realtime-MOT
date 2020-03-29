@@ -1,6 +1,10 @@
 """Demo file for running the JDE tracker on custom video sequences for pedestrian tracking.
 
-This file is the entry point to running the tracker on custom video sequences. It loads images from the provided video sequence, uses the JDE tracker for inference and outputs the video with bounding boxes indicating pedestrians. The bounding boxes also have associated ids (shown in different colours) to keep track of the movement of each individual. 
+This file is the entry point to running the tracker on custom video sequences.
+It loads images from the provided video sequence, uses the JDE tracker for inference
+and outputs the video with bounding boxes indicating pedestrians. The bounding
+boxes also have associated ids (shown in different colours) to keep track of
+the movement of each individual.
 
 Examples:
         $ python demo.py --input-video path/to/your/input/video --weights path/to/model/weights --output-root path/to/output/root
@@ -49,6 +53,7 @@ def track(opt):
     n_frame = 0
 
     logger.info('Starting tracking...')
+    print("Input video: {}".format(opt.input_video))
     dataloader = datasets.LoadVideo(opt.input_video, opt.img_size)
     result_filename = os.path.join(result_root, 'results.txt')
     frame_rate = dataloader.frame_rate 
@@ -61,11 +66,15 @@ def track(opt):
         logger.info(e)
 
     if opt.output_format == 'video':
-        output_video_path = osp.join(result_root, 'result.mp4')
+        _, outf = os.path.split(opt.input_video)
+        outf = outf.split('.')[0]
+        outf = outf + '_out.mp4'
+        output_video_path = osp.join(result_root, outf)
+        print("Output video: {}".format(output_video_path))
         cmd_str = 'ffmpeg -f image2 -i {}/%05d.jpg -c:v copy {}'.format(osp.join(result_root, 'frame'), output_video_path)
         os.system(cmd_str)
 
-        
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog='demo.py')
     parser.add_argument('--cfg', type=str, default='cfg/yolov3_1088x608.cfg', help='cfg file path')

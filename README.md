@@ -14,7 +14,11 @@ We hope this repo will help researches/engineers to develop more practical MOT s
 * [Pytorch](https://pytorch.org) >= 1.2.0 
 * python-opencv
 * [py-motmetrics](https://github.com/cheind/py-motmetrics) (`pip install motmetrics`)
+* `pip install Cython`
 * cython-bbox (`pip install cython_bbox`)
+* matplotlib
+* `pip install lap`
+* `pip install numba`
 * (Optional) ffmpeg (used in the video demo)
 * (Optional) [syncbn](https://github.com/ytoon/Synchronized-BatchNorm-PyTorch) (compile and place it under utils/syncbn, or simply replace with nn.BatchNorm [here](https://github.com/Zhongdao/Towards-Realtime-MOT/blob/master/models.py#L12))
 * ~~[maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) (Their GPU NMS is used in this project)~~
