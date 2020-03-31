@@ -19,6 +19,7 @@ We hope this repo will help researches/engineers to develop more practical MOT s
 * matplotlib
 * `pip install lap`
 * `pip install numba`
+* `pip install openpyxl`
 * (Optional) ffmpeg (used in the video demo)
 * (Optional) [syncbn](https://github.com/ytoon/Synchronized-BatchNorm-PyTorch) (compile and place it under utils/syncbn, or simply replace with nn.BatchNorm [here](https://github.com/Zhongdao/Towards-Realtime-MOT/blob/master/models.py#L12))
 * ~~[maskrcnn-benchmark](https://github.com/facebookresearch/maskrcnn-benchmark) (Their GPU NMS is used in this project)~~

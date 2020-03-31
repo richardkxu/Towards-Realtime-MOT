@@ -11,6 +11,9 @@ import torch.nn.functional as F
 from torchvision.ops import nms
 
 
+mycolor = {'person': (0,0,255), 'car': (255,0,0), 'truck': (255,128,0)}
+
+
 def mkdir_if_missing(dir):
     os.makedirs(dir, exist_ok=True)
 
