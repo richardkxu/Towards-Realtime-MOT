@@ -186,6 +186,7 @@ if __name__ == '__main__':
     opt = parser.parse_args()
     print(opt, end='\n\n')
 
+    # MOT17 test
     if not opt.test_mot16:
         # seqs_str = '''MOT17-02-SDP
         #               MOT17-04-SDP
@@ -201,6 +202,7 @@ if __name__ == '__main__':
                             '''
         # data_root = '/home/wangzd/datasets/MOT/MOT17/images/train'
         data_root = '/home/richardkxu/DATA/MOT17-dataset/test'
+    # MOT16 test
     else:
         seqs_str = '''MOT16-01
                      MOT16-03

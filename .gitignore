@@ -1,3 +1,4 @@
+*.mp4
 results/
 weights/
 data/mot17

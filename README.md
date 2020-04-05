@@ -31,8 +31,7 @@ We hope this repo will help researches/engineers to develop more practical MOT s
 
 Usage:
 ```
-python demo.py --input-video path/to/your/input/video --weights path/to/model/weights
-               --output-format video --output-root path/to/output/root
+python demo.py --input-video indata/engr_circle.mp4 --weights weights/jde_1088x608_uncertainty.pt --output-format video --output-root outdata/engr-circle-results
 ```
 
 ## Docker demo example
@@ -61,9 +60,9 @@ Trained models with different input resolutions:
 
 The performance is tested on the MOT-16 training set, just for reference. Running speed is tested on an Nvidia Titan Xp GPU. For a more comprehensive comparison with other methods you can test on MOT-16 test set and submit a result to the [MOT-16 benchmark](https://motchallenge.net/results/MOT16/?det=Private). Note that the results should be submitted to the private detector track.
 
-## Test on MOT-16 Challenge
+## Test on MOT-17 Challenge
 ```
-python track.py --cfg ./cfg/yolov3_1088x608.cfg --weights /path/to/model/weights
+python track.py --save-images --save-videos --cfg ./cfg/yolov3_1088x608.cfg --weights weights/jde_1088x608_uncertainty.pt
 ```
 By default the script runs evaluation on the MOT-16 training set. If you want to evaluate on the test set, please add `--test-mot16` to the command line.
 Results are saved in text files in `$DATASET_ROOT/results/*.txt`. You can also add `--save-images` or `--save-videos` flags to obtain the visualized results. Visualized results are saved in `$DATASET_ROOT/outputs/`
